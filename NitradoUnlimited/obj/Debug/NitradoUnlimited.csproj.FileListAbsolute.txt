@@ -1,0 +1,14 @@
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\bin\Debug\NitradoUnlimited.exe.config
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\bin\Debug\NitradoUnlimited.exe
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\bin\Debug\NitradoUnlimited.pdb
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.csprojResolveAssemblyReference.cache
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.main.resources
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.Properties.Resources.resources
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.web.resources
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.csproj.GenerateResource.Cache
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.exe
+c:\users\marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.pdb
+C:\Users\Marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.settings.resources
+C:\Users\Marc\documents\visual studio 2015\Projects\NitradoUnlimited\NitradoUnlimited\obj\Debug\NitradoUnlimited.serverview.resources
