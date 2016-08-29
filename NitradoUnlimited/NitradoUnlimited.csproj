@@ -180,6 +180,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="nitrado.ico" />
+    <None Include="Resources\add-icon1.png" />
+    <None Include="Resources\add-icon.png" />
     <None Include="Resources\arrow-refresh-4-icon.png" />
   </ItemGroup>
   <ItemGroup>

@@ -33,6 +33,16 @@ namespace NitradoUnlimited
             
     WebBrowserDocumentCompletedEventArgs e)
         {
+            txturl.Text = Convert.ToString(webbro.Url);
+            int find = txturl.Text.IndexOf("https://");
+            if (find == 0)
+            {
+                txturl.BackColor = Color.Green;
+
+            }else
+            {
+                txturl.BackColor = Color.White;
+            }
             string webinhalt = webbro.Document.Body.InnerText;
             int webindex =  webinhalt.IndexOf("token:");
             if (webindex >= 0)
@@ -41,6 +51,7 @@ namespace NitradoUnlimited
                makeaccessrequest(authtoken);
                 Properties.Settings.Default.Save();
                 this.Close();
+                
             }
            
         }
@@ -52,7 +63,7 @@ namespace NitradoUnlimited
         {
             string UrlRequest = "https://oauth.nitrado.net/oauth/v2/token?grant_type=authorization_code&code=" +
                                  authtoken +
-                                 "&redirect_uri=https://marcsrv.de/nitrado/auth.php&%20client_id=<Client ID>&%20client_secret=<SECRET KEY>";
+                                 "&redirect_uri=https://marcsrv.de/nitrado/auth.php&%20client_id=<clientID>&%20client_secret=<CLIENTSecret>";
 
             var request = WebRequest.Create(UrlRequest);
             request.ContentType = "application/json; charset=utf-8";

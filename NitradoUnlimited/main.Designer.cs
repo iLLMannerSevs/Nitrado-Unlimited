@@ -29,26 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Gameserver", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Voiceserver", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Musicbot", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Webspace", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Domains", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("CMS", System.Windows.Forms.HorizontalAlignment.Left);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.labelusername = new System.Windows.Forms.Label();
             this.labelname = new System.Windows.Forms.Label();
             this.labelregistered = new System.Windows.Forms.Label();
             this.labelcredit = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listservices = new System.Windows.Forms.ListView();
             this.btnsettings = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnlogout = new System.Windows.Forms.Button();
             this.avatarpic = new System.Windows.Forms.PictureBox();
-            this.listservices = new System.Windows.Forms.ListView();
             this.imagelist = new System.Windows.Forms.ImageList(this.components);
+            this.backworker = new System.ComponentModel.BackgroundWorker();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.accountswitcher = new System.Windows.Forms.ToolStripDropDownButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarpic)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelusername
@@ -101,6 +105,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Services";
             // 
+            // listservices
+            // 
+            this.listservices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            listViewGroup1.Header = "Gameserver";
+            listViewGroup1.Name = "gameserver";
+            listViewGroup2.Header = "Voiceserver";
+            listViewGroup2.Name = "voiceserver";
+            listViewGroup3.Header = "Musicbot";
+            listViewGroup3.Name = "musicbot";
+            listViewGroup4.Header = "Webspace";
+            listViewGroup4.Name = "webspace";
+            listViewGroup5.Header = "Domains";
+            listViewGroup5.Name = "domains";
+            listViewGroup6.Header = "CMS";
+            listViewGroup6.Name = "clanpage";
+            this.listservices.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
+            listViewGroup1,
+            listViewGroup2,
+            listViewGroup3,
+            listViewGroup4,
+            listViewGroup5,
+            listViewGroup6});
+            this.listservices.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.listservices.Location = new System.Drawing.Point(6, 28);
+            this.listservices.MultiSelect = false;
+            this.listservices.Name = "listservices";
+            this.listservices.Size = new System.Drawing.Size(911, 426);
+            this.listservices.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listservices.TabIndex = 0;
+            this.listservices.TileSize = new System.Drawing.Size(268, 80);
+            this.listservices.UseCompatibleStateImageBehavior = false;
+            this.listservices.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listservices_MouseDoubleClick);
+            // 
             // btnsettings
             // 
             this.btnsettings.Location = new System.Drawing.Point(809, 57);
@@ -144,39 +181,6 @@
             this.avatarpic.TabIndex = 0;
             this.avatarpic.TabStop = false;
             // 
-            // listservices
-            // 
-            this.listservices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            listViewGroup1.Header = "Gameserver";
-            listViewGroup1.Name = "gameserver";
-            listViewGroup2.Header = "Voiceserver";
-            listViewGroup2.Name = "voiceserver";
-            listViewGroup3.Header = "Musicbot";
-            listViewGroup3.Name = "musicbot";
-            listViewGroup4.Header = "Webspace";
-            listViewGroup4.Name = "webspace";
-            listViewGroup5.Header = "Domains";
-            listViewGroup5.Name = "domains";
-            listViewGroup6.Header = "CMS";
-            listViewGroup6.Name = "clanpage";
-            this.listservices.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2,
-            listViewGroup3,
-            listViewGroup4,
-            listViewGroup5,
-            listViewGroup6});
-            this.listservices.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.listservices.Location = new System.Drawing.Point(6, 28);
-            this.listservices.MultiSelect = false;
-            this.listservices.Name = "listservices";
-            this.listservices.Size = new System.Drawing.Size(911, 426);
-            this.listservices.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listservices.TabIndex = 0;
-            this.listservices.TileSize = new System.Drawing.Size(268, 80);
-            this.listservices.UseCompatibleStateImageBehavior = false;
-            this.listservices.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listservices_MouseDoubleClick);
-            // 
             // imagelist
             // 
             this.imagelist.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imagelist.ImageStream")));
@@ -187,11 +191,31 @@
             this.imagelist.Images.SetKeyName(3, "browser-icon.png");
             this.imagelist.Images.SetKeyName(4, "pages-icon.png");
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accountswitcher});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 588);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(941, 22);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statestrip";
+            // 
+            // accountswitcher
+            // 
+            this.accountswitcher.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.accountswitcher.Image = ((System.Drawing.Image)(resources.GetObject("accountswitcher.Image")));
+            this.accountswitcher.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.accountswitcher.Name = "accountswitcher";
+            this.accountswitcher.Size = new System.Drawing.Size(148, 20);
+            this.accountswitcher.Text = "Account: %ACCOUNT%";
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 598);
+            this.ClientSize = new System.Drawing.Size(941, 610);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.btnsettings);
             this.Controls.Add(this.btnlogout);
@@ -209,6 +233,8 @@
             this.Load += new System.EventHandler(this.main_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avatarpic)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +253,9 @@
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.ListView listservices;
         private System.Windows.Forms.ImageList imagelist;
+        private System.ComponentModel.BackgroundWorker backworker;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton accountswitcher;
     }
 }
 

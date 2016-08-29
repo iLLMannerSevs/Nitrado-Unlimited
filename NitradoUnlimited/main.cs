@@ -52,13 +52,20 @@ namespace NitradoUnlimited
                 accesstokenacc = Properties.Settings.Default.accesstoken;
                 if (accesstokenacc == "")
                 {
-                    MessageBox.Show("Error, Kein Account Zugriff");
-                }
+                    MessageBox.Show("Error, Kein Account Zugriff, Token nicht vorhanden oder ungültig");
 
+                }
+                
             }
 
-            btnupdate.PerformClick();
-
+            try
+            {
+                btnupdate.PerformClick();
+            }
+            catch
+            {
+                MessageBox.Show("Ein Fehler ist aufgetreten");
+            }
             
 
         }
@@ -73,7 +80,7 @@ namespace NitradoUnlimited
             mainform.accesstokenacc = Properties.Settings.Default.accesstoken;
             if (mainform.accesstokenacc == "")
             {
-                MessageBox.Show("Error, Kein Account Zugriff");
+                MessageBox.Show("Error, Kein Account Zugriff, Zugriffstoken ist ungültig oder nicht vorhanden");
             }
         }
 
@@ -136,7 +143,14 @@ namespace NitradoUnlimited
             Properties.Settings.Default.accesstoken = "";
             Properties.Settings.Default.Save();
             login();
-            btnupdate.PerformClick();
+            try
+            {
+                btnupdate.PerformClick();
+            }
+            catch
+            {
+                MessageBox.Show("Ein Fehler ist aufgeteten");
+            }
             
 
 
@@ -197,6 +211,8 @@ namespace NitradoUnlimited
 
             
             listservices.LargeImageList = imagelist;
+
+            accountswitcher.Text = "Account: " + Variables.username + " (" + Variables.userid + ")";
 
             foreach (var service in dresponse.data.services)
             {
