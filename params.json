@@ -1,0 +1,6 @@
+{
+  "name": "Nitrado-unlimited",
+  "tagline": "Nitrado Unlimited Desktop Client",
+  "body": "# Nitrado Unlimited\r\n\r\nSource Code für Nitrado Unlimited. Aktueller Stable Build ohne ClientID und SecretKEY\r\n\r\n\r\n Installer mit Setup befindet sich unter [NitradoUnlimtedSetup.exe][linktodown]\r\n\r\nOffizielle Forumpost: [Nitrado Forum Link][linktoboard]\r\n\r\n### Aktuelle Version\r\n1.2\r\n\r\n\r\n[linktodown]: <https://marcsrv.de/nitrado/NitradoUnlimited.de>\r\n[linktoboard]: <https://board.nitrado.net/community-area/programmierung/releases/113651/nitrado-pc-manager-nitrado-unlimited-alpha-tecdemo/>",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
