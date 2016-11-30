@@ -1,4 +1,4 @@
-# Nitrado Unlimited wird nicht mehr weiterentwicklelt und ist nun unter Nitrado MAI verfügbar [NitradoMAI][linktomai]
+# Nitrado Unlimited wird nicht mehr weiterentwickelt und ist nun unter Nitrado MAI verfügbar [NitradoMAI][linktomai]
 
 # Nitrado Unlimited
 
