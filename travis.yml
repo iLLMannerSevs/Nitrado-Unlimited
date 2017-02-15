@@ -1,2 +1,7 @@
 language: csharp
 solution: NitradoUnlimited.sln
+install:
+  - sudo apt-get install -y gtk-sharp2
+  - nuget restore NitradoUnlimited.sln
+script:
+  - xbuild /p:Configuration=Release NitradoUnlimited.sln
