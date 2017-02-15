@@ -2,10 +2,9 @@ language: csharp
 solution: NitradoUnlimited.sln
 install:
   - sudo apt-get install -y gtk-sharp2
+  - Install-Package Newtonsoft.Json
   - nuget restore NitradoUnlimited.sln
-  - nuget Install-Package Newtonsoft.Json
 before_install:
-  - nuget Install-Package Newtonsoft.Json
   - sudo apt-get install nunit-console
 before_script:
   - nuget restore NitradoUnlimited.sln
