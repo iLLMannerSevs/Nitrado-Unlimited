@@ -64,7 +64,7 @@ namespace NitradoUnlimited
             }
             catch
             {
-                MessageBox.Show("Ein Fehler ist aufgetreten");
+                MessageBox.Show("Ein unbekannter Fehler ist aufgetreten");
             }
             
 
